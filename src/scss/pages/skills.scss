@@ -1,7 +1,11 @@
 .cube{
 	width: 100vw;
 	@media (min-width: 768px) {
-		width: 50vw;
+		position: sticky;
+		top: 0;
+		height: 100vh;
+		width: auto;
+		min-width: 50vw;
 	}
 }
 
@@ -13,6 +17,7 @@
 	@media (min-width: 768px) {
 		display: flex;
 		flex-direction: row;
+
 	}
   }
 
@@ -142,6 +147,8 @@
 	background-color: white;
 	border-top-left-radius: 20px;
 	border-top-right-radius: 20px;
+	flex: 1; /* Растягиваем контейнер скиллов на всю доступную высоту */
+  overflow-y: auto;
 }
 .skill {
     opacity: 0;
