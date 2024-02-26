@@ -1,0 +1,30 @@
+@import 'fonts';
+@import 'reset';
+@import 'pages/skills';
+@import 'pages/about';
+@import 'pages/experience';
+@import 'layout/header';
+@import 'layout/footer';
+
+// *{
+// 	border:1px solid red;
+// }
+
+body {
+	height: 100%;
+}
+
+.wrapper{
+	display: flex;
+	flex-direction: column;
+	min-height: 100%;
+}
+
+.container{
+	margin-inline: 20px;
+	@media (min-width: 768px) {
+		max-width: 100%;
+		margin-inline: 64px;
+		padding-inline: 0;
+	}
+}

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ru">
+	@@include('html/head.html',{"title": "Главная"})
+	
+	<body>
+		<div class="wrapper">
+			<!-- Шапка сайта -->
+			@@include('html/header.html',{})
+			
+			<!-- Основной контент -->
+			<section class="experience__main">
+				<img src="../img/cube.jpg" alt="" class="cube">
+					<div class="experience__block">
+							<h1 class="experience__head">Опыт работы</h1>
+                            <div class="experience">
+                                <div class="experience__container">
+                                    <div class="experience__progress_container">
+                                        <span class="experience__progress_text">Июль 2022 г — Август 2023 г</span>
+                                    </div>
+                                    <p class="experience__text">
+                                        1integrator, компания сфокусированная на информационных технологиях и системной интеграции, веб-разработке.
+                                        Мои обязанности включали интеграцию сайтов с CMS Bitrix, 
+                                        создание рекламных лэндингов на React.js и поддержку существующих веб-сайтов.
+                                        Я также улучшал и рефакторил код, внедрял ленивую загрузку для оптимизации времени загрузки страниц,
+                                        конфигурировал Webpack и Gulp для автоматизации сборки,
+                                        а также внедрял кастомные миксины и переменные в SCSS для упрощения стилизации. Кроме того, 
+                                        занимался версткой адаптивных компонентов для UI-kit, 
+                                        написанием бизнес-логики, взаимодействием с заказчиками и внедрением инструментов аналитики, 
+                                        таких как Яндекс Метрика и Google Analytics.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="experience">
+                                <div class="experience__container">
+                                    <div class="experience__progress_container">
+                                        <span class="experience__progress_text">Сентябрь 2023 г — Ноябрь 2023 г</span>
+                                    </div>
+                                    <p class="experience__text"> 
+                                        Студия Олега Чулакова, ООО, специализируется в
+                                         области информационных технологий, системной интеграции и интернет-проектов.
+                                          Основной фокус компании - разработка веб-приложений.
+
+                                        Работая в компании в должности Frontend-разработчика и Junior-разработчика,
+                                        я занимался улучшением качества кода, оптимизацией процесса тестирования и повышением производительности проектов.
+                                        Мои основные достижения включают в себя внедрение инструментов eslint, stylelint, prettier и git hooks для улучшения кода, 
+
+                                        а также настройку тестового сервера и автодеплоя для оптимизации ручного тестирования.
+
+                                        Также я занимался улучшением SEO и производительности проектов при миграции на Next.js, 
+                                        сокращением времени разработки компонентов с использованием Mantine UI, визуализацией данных через Framer Motion и D3.js, 
+                                        а также оптимизацией верстки писем с использованием React Email. 
+                                        Участвовал в проекте разработки системы ГЛОНАСС для отслеживания городского транспорта в Санкт-Петербурге,
+                                        внедряя UI-kit компоненты и бизнес-логику на Mobx.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="experience">
+                                <div class="experience__container">
+                                    <div class="experience__progress_container">
+                                        <span class="experience__progress_text">Декабрь 2023 г — Февраль 2024 г</span>
+                                    </div>
+                                    <p class="experience__text">   
+                                        На фрилансе я занимался разработкой лендингов и созданием фронтенд части онлайн-магазина,
+                                        специализирующегося на продаже 3D моделей.
+                                        Для лендингов я создавал эффективные и привлекательные веб-страницы с помощью
+                                        HTML, CSS и JavaScript, учитывая потребности заказчика и ориентируясь на конечного пользователя.
+                                        В случае магазина я разрабатывал интерфейс,
+                                        обеспечивая удобство навигации, интуитивно понятный поиск и возможность просмотра и покупки 3D моделей. 
+                                        Моя работа включала в себя также интеграцию с API для обработки платежей и управления содержимым магазина.
+                                    </p>
+                                </div>
+                            </div>
+					</div>
+					</div>									
+				</div>
+			</section>
+			<!-- Подвал сайта -->
+			@@include('html/footer.html',{})
+		</div>
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>	
+		<script>
+
+    function isScrolledIntoView(elem) {
+        var docViewTop = $(window).scrollTop();
+        var docViewBottom = docViewTop + $(window).height();
+        var elemTop = $(elem).offset().top;
+        var elemBottom = elemTop + $(elem).height();
+        return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
+    }
+
+    function animateSkillsOnScroll() {
+        $(".experience").each(function() {
+            if (isScrolledIntoView(this)) {
+                $(this).addClass("visible");
+            }
+        });
+    }
+
+    animateSkillsOnScroll();
+
+    $(window).scroll(function() {
+        animateSkillsOnScroll();
+    });
+						$(document).ready(function(){
+
+	var currentURL = window.location.href;
+	$('.header__navigation_list a').each(function() {
+	if (currentURL.includes($(this).attr('href'))) {
+		$(this).addClass('bold-link');
+	}
+});
+			});
+		</script>
+		<script src="js/app.min.js"></script>
+	</body>
+</html>
